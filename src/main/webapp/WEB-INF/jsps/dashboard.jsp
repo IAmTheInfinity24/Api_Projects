@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,20 +13,18 @@
 </head>
 <body>
 <header class="bg-primary text-white text-center py-4">
-    <div class="d-flex justify-content-between align-items-center container">
-        <h1>Welcome to SkyBound - Flight Ticket Booking</h1>
-        <!-- Login Button in the top right corner -->
-        <a href="showLoginPage" class="btn btn-light text-primary">Log In</a>
+   <div class="d-flex justify-content-between align-items-center container">
+       <h1>Welcome to SkyBound - Flight Ticket Booking</h1>
+       <p class="btn btn-light text-primary">${message}</p>
+   </div>
 
-    </div>
 </header>
-
 
 <div class="container mt-4">
     <section>
         <h2>Search for Flights</h2>
         <!-- Bootstrap Form -->
-        <form action="showLoginPage" method="post" class="mb-4">
+        <form action="findFlights" method="post" class="mb-4">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="origin">Origin:</label>
@@ -73,6 +73,8 @@
 
 <footer class="bg-dark text-white text-center py-3">
     <p>&copy; 2024 SkyBound - Flight Ticket Booking</p>
+<a href="index" class="btn btn-light text-primary">Log Out</a>
+
 </footer>
 
 <!-- Add Bootstrap JS and Popper.js -->
@@ -87,4 +89,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-

@@ -11,6 +11,18 @@ public class Passenger extends AbstractEntity {
 	private String email;
 	private String phone;
 
+	public Passenger(String firstName, String lastName, String middleName, String email, String phone) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.middleName = middleName;
+		this.email = email;
+		this.phone = phone;
+	}
+
+	public Passenger() {
+
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -51,4 +63,14 @@ public class Passenger extends AbstractEntity {
 		this.phone = phone;
 	}
 
+	@Override
+	public String toString() {
+		return "Passenger{" +
+				"firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", middleName='" + middleName + '\'' +
+				", email='" + email + '\'' +
+				", phone='" + phone + '\'' +
+				'}';
+	}
 }

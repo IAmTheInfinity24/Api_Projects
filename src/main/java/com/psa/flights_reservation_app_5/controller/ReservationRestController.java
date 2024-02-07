@@ -33,7 +33,7 @@ public class ReservationRestController {
 		Reservation reservation1 = findById.get();
 		System.err.println(reservation1);
 		reservation.setFlight(reservation1.getFlight());
-		reservation.setPassenger(reservation1.getPassenger());
+		reservation.setPassengers(reservation1.getPassengers());
 		System.err.println(reservation1);
 		System.err.println(reservation);
 		return rri.save(reservation);

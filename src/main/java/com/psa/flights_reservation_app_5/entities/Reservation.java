@@ -1,14 +1,17 @@
 package com.psa.flights_reservation_app_5.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.util.List;
 
 @Entity
 public class Reservation extends AbstractEntity {
 	private boolean checkedIn;
 	private int numberOfBags;
-	@OneToOne
-	private Passenger passenger;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Passenger> passengers;
 	@OneToOne
 	private Flight flight;
 
@@ -28,12 +31,12 @@ public class Reservation extends AbstractEntity {
 		this.numberOfBags = numberOfBags;
 	}
 
-	public Passenger getPassenger() {
-		return passenger;
+	public List<Passenger> getPassengers() {
+		return passengers;
 	}
 
-	public void setPassenger(Passenger passenger) {
-		this.passenger = passenger;
+	public void setPassengers(List<Passenger> passengers) {
+		this.passengers = passengers;
 	}
 
 	public Flight getFlight() {
@@ -46,7 +49,7 @@ public class Reservation extends AbstractEntity {
 
 	@Override
 	public String toString() {
-		return "Reservation [checkedIn=" + checkedIn + ", numberOfBags=" + numberOfBags + ", passenger=" + passenger
+		return "Reservation [checkedIn=" + checkedIn + ", numberOfBags=" + numberOfBags + ", passenger=" + passengers
 				+ ", flight=" + flight + "]";
 	}
 

@@ -1,95 +1,82 @@
 package com.psa.flights_reservation_app_5.dto;
 
+import com.psa.flights_reservation_app_5.entities.Passenger;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
+
 public class ReservationRequest {
-	private long flightId;
-	private String firstName;
-	private String lastName;
-	private String middleName;
-	private String email;
-	private String phone;
-	private String cardNumber;
-	private String cardHolderName;
-	private String expiryDate;
-	private String cvv;
+    private long flightId;
 
-	public String getMiddleName() {
-		return middleName;
-	}
 
-	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
-	}
+    private String cardNumber;
+    private String cardHolderName;
+    private String expiryDate;
+    private String cvv;
 
-	public long getFlightId() {
-		return flightId;
-	}
+    @OneToMany(cascade = CascadeType.ALL)
+    List<Passenger> passengers = new ArrayList<>();
 
-	public void setFlightId(long flightId) {
-		this.flightId = flightId;
-	}
+    public long getFlightId() {
+        return flightId;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public void setFlightId(long flightId) {
+        this.flightId = flightId;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
 
-	public String getLastName() {
-		return lastName;
-	}
+    public String getCardNumber() {
+        return cardNumber;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getCardHolderName() {
+        return cardHolderName;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setCardHolderName(String cardHolderName) {
+        this.cardHolderName = cardHolderName;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public String getExpiryDate() {
+        return expiryDate;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
+    }
 
-	public String getCardNumber() {
-		return cardNumber;
-	}
+    public String getCvv() {
+        return cvv;
+    }
 
-	public void setCardNumber(String cardNumber) {
-		this.cardNumber = cardNumber;
-	}
+    public void setCvv(String cvv) {
+        this.cvv = cvv;
+    }
 
-	public String getCardHolderName() {
-		return cardHolderName;
-	}
+    public List<Passenger> getPassengers() {
+        return passengers;
+    }
 
-	public void setCardHolderName(String cardHolderName) {
-		this.cardHolderName = cardHolderName;
-	}
+    public void setPassengers(List<Passenger> passengers) {
+        this.passengers = passengers;
+    }
 
-	public String getExpiryDate() {
-		return expiryDate;
-	}
-
-	public void setExpiryDate(String expiryDate) {
-		this.expiryDate = expiryDate;
-	}
-
-	public String getCvv() {
-		return cvv;
-	}
-
-	public void setCvv(String cvv) {
-		this.cvv = cvv;
-	}
-
+    @Override
+    public String toString() {
+        return "ReservationRequest{" +
+                "flightId=" + flightId +
+                ", cardNumber='" + cardNumber + '\'' +
+                ", cardHolderName='" + cardHolderName + '\'' +
+                ", expiryDate='" + expiryDate + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", passengers=" + passengers +
+                '}';
+    }
 }
