@@ -28,7 +28,7 @@ public class UserController {
 
 	@GetMapping("/dashboard")
 	public String home(ModelMap map) {
-		map.addAttribute("message" , user.getFirstName()+" "+user.getLastName());
+		map.addAttribute("message" ,"Welcome"+ user.getFirstName()+" "+user.getLastName());
 		// Redirect to the dashboard
 		return "dashboard";
 	}
